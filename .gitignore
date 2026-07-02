@@ -1,0 +1,23 @@
+# Credenciales — NUNCA commitear
+.env
+*.env
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Datos y salidas locales
+*.csv
+*.parquet
+data/
+outputs/
+*.png
+*.log
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store

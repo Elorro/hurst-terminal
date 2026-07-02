@@ -1,0 +1,5 @@
+# Dependencias directas del proyecto (versiones del venv verificado el 2026-07-01).
+alpaca-py==0.43.4
+numpy==2.5.0
+pandas==3.0.3
+python-dotenv==1.2.2
