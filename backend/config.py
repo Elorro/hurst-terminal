@@ -19,7 +19,13 @@ APCA_API_KEY_ID = os.getenv("APCA_API_KEY_ID")
 APCA_API_SECRET_KEY = os.getenv("APCA_API_SECRET_KEY")
 
 # --- Watchlist y timeframe --------------------------------------------------
-WATCHLIST = ["AMD", "NVDA"]   # extensible
+# Watchlist de DATOS ≠ watchlist de HURST. AMD sigue disponible como símbolo de
+# datos (Fase 1, barras, fases futuras), pero está fuera del alcance del Hurst
+# intradía vía IEX (bitácora §10: causa raíz = resolución del feed, verificada
+# a 1m y 5m). Volvería al 1m/120 con feed SIP de pago — decisión a reevaluar
+# con evidencia de uso real, NO por anticipado.
+WATCHLIST = ["AMD", "NVDA"]   # datos: extensible
+HURST_WATCHLIST = ["NVDA"]    # motor de Hurst: entrar exige examen de admisión (§10)
 TIMEFRAME = "1Min"             # timeframe inicial de Fase 1
 
 # --- Hurst rolling (Fase 2) -------------------------------------------------
@@ -27,15 +33,15 @@ TIMEFRAME = "1Min"             # timeframe inicial de Fase 1
 # "verdadero" único, y NO se optimiza buscando estabilidad (eso sería sobreajuste).
 HURST_WINDOW = 120
 
-# --- Timeframe por símbolo (Tarea B, bitácora §9) ----------------------------
-# AMD migra a 5m/ventana 60: la causa raíz de su falta de H a 1m es la
-# resolución del feed IEX, no la ventana. NVDA sigue a 1m/120. Escalas NO
-# comparables entre sí: decisión tomada y documentada. Ventana 60 fijada por
-# física (dfa() >= 50; sesión = 78 barras de 5m), NO calibrable.
-# Las velas 5m salen del BarResampler local sobre el MISMO stream de 1m (una
-# sola suscripción); ventanas 5m incompletas se excluyen (política §7).
-BAR_MINUTES = {"AMD": 5}      # símbolo ausente -> barras de 1m
-HURST_WINDOWS = {"AMD": 60}   # símbolo ausente -> HURST_WINDOW
+# --- Timeframe por símbolo (infraestructura Tarea B) -------------------------
+# Umbral de segmentación derivado del timeframe (tolerar hasta 2x la duración
+# de barra, cortar >2x) y agregación local vía BarResampler sobre el MISMO
+# stream de 1m (una sola suscripción); ventanas agregadas incompletas se
+# excluyen (política §7). La infraestructura se conserva para el futuro
+# (régimen diario/swing, otros símbolos, SIP) aunque hoy ningún símbolo corre
+# a >1m: AMD 5m/60 quedó falsificado en la verificación (bitácora §10).
+BAR_MINUTES = {}       # símbolo -> minutos de barra; ausente -> 1m
+HURST_WINDOWS = {}     # símbolo -> ventana Hurst; ausente -> HURST_WINDOW
 
 # Feed del plan gratuito: IEX explícito (no asumir el default).
 FEED = "iex"

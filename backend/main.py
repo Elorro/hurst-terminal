@@ -16,12 +16,15 @@ from sources import DataSource, LiveSource, ReplaySource
 _ET = ZoneInfo("America/New_York")
 
 
-def build_source() -> DataSource:
+def build_source(symbols=None) -> DataSource:
+    """Fuente según config. `symbols` permite a cada consumidor pedir su propia
+    watchlist (p.ej. run_hurst usa HURST_WATCHLIST); default: la de datos."""
+    symbols = config.WATCHLIST if symbols is None else list(symbols)
     if config.SOURCE == "replay":
         return ReplaySource(
             api_key=config.APCA_API_KEY_ID,
             secret_key=config.APCA_API_SECRET_KEY,
-            symbols=config.WATCHLIST,
+            symbols=symbols,
             day=config.REPLAY_DATE,
             feed=config.FEED,
             speed=config.REPLAY_SPEED,
@@ -31,7 +34,7 @@ def build_source() -> DataSource:
         return LiveSource(
             api_key=config.APCA_API_KEY_ID,
             secret_key=config.APCA_API_SECRET_KEY,
-            symbols=config.WATCHLIST,
+            symbols=symbols,
             feed=config.FEED,
             mode=config.LIVE_MODE,
         )

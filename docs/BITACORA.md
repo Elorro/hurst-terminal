@@ -75,9 +75,9 @@
 
 ## 4. Pendientes inmediatos (lunes, mercado abierto)
 
-- [ ] **Verificar Live en vivo**: que `LiveSource` (modo A) imprima velas en
+- [x] **Verificar Live en vivo** (§7): que `LiveSource` (modo A) imprima velas en
       sesión.
-- [ ] **Medir latencia de cierre de vela**: que la barra del minuto X aparezca
+- [x] **Medir latencia de cierre de vela** (§7, línea base): que la barra del minuto X aparezca
       poco después de cerrar el minuto X, no con retraso grande. Esto determina
       si el Hurst en vivo irá al día o arrastrado. Es el detalle que separa
       "funciona en replay" de "sirve en vivo".
@@ -194,12 +194,13 @@
   el umbral. Pensar "con otro umbral se ve más estable" → parar; eso es sobreajuste.
 
 ### Pendiente Fase 2 (Claude Code)
-- [ ] `SessionFilter` (capas sesión + velas planas) en el borde de entrada.
-- [ ] Buffer rolling + segmentación por contigüidad (gap > 2 min, H=NaN sin
-      segmento suficiente).
-- [ ] Logging de barras excluidas y ventanas anuladas por sesión.
-- [ ] Mantener `dfa()` pura; reutilizar la de `hurst_dfa.py` sin tocar.
-- [ ] Verificación (no calibración) vía replay de fecha FOMC pasada — elegir fecha.
+- [x] `SessionFilter` (capas sesión + velas planas) en el borde de entrada (§9).
+- [x] Buffer rolling + segmentación por contigüidad (gap > 2 min, H=NaN sin
+      segmento suficiente) (§9).
+- [x] Logging de barras excluidas y ventanas anuladas por sesión (§9, §10).
+- [x] Mantener `dfa()` pura; reutilizar la de `hurst_dfa.py` sin tocar (§9).
+- [x] Verificación (no calibración) vía replay de fecha FOMC pasada — fecha
+      elegida: 2026-06-17 (§9).
 
 ### Ideas futuras registradas (NO construir ahora)
 - Otras lentes de régimen que encajan con la filosofía diagnóstica: **change-point
@@ -208,3 +209,160 @@
   Ambas diagnósticas, no gatillos.
 - Panel de noticias/social en tiempo real: fase muy posterior, base sería el
   endpoint de noticias gratuito de Alpaca. Fuera de alcance actual.
+
+## 9. Verificación FOMC, hallazgo AMD y preparación NFP (mar 2026-06-30 / mié 2026-07-01)
+
+### Verificación replay FOMC 2026-06-17 (fecha fijada de antemano, §8)
+- Ambos objetivos de la guardia anti-sobreajuste (§8) **cumplidos**: cortes sobre
+  huecos reales, conteo de NaN comprensible.
+- **NVDA limpia**: 390 barras contiguas, 270 H, 0 cortes.
+- **AMD**: 333 válidas, 11 cortes — todos sobre huecos reales ≥180 s; 27 gaps de
+  120 s tolerados; conteo NaN exacto (120+211+2 = 333). Off-by-one verificado en
+  ambas direcciones.
+
+### Hallazgo contra-intuitivo: los huecos van ANTES del anuncio
+- Los huecos IEX de AMD se concentran en el **lull pre-anuncio** (12:11–13:53 ET),
+  NO en/después de las 14:00. Post-anuncio AMD queda totalmente contigua
+  (volumen alto → IEX imprime cada minuto).
+- **Invierte la asunción con la que se diseñó §8**: la herramienta ve bien la
+  reacción; la ceguera potencial está en la antesala.
+
+### AMD-1m-IEX: sin señal utilizable
+- Dos datapoints: 15-jun (tranquilo) run máx 109 → 0 H; 17-jun (FOMC) run máx
+  122 → 2 H (15:58, 15:59).
+- AMD a 1m **roza el umbral de 120** y es día-dependiente → sin señal utilizable.
+- **Causa raíz: resolución del feed, no la ventana.**
+
+### Decisión tomada — opción (a): AMD migra a 5m
+- AMD → **5m / ventana 60** vía `BarResampler` (§7); NVDA se queda en 1m/120.
+- Escalas **no comparables entre sí**: aceptado y documentado.
+- **Descartado**: ventana-por-símbolo a 1m (arregla el síntoma, rompe
+  comparabilidad).
+- Ventana 60 fijada por **física** (`dfa()` ≥50, sesión = 78 barras de 5m),
+  **NO calibrable** (coherente con §8).
+
+### Diagnóstico corregido (de resumen externo)
+- Las velas planas **NO contaminan** nuestro DFA: `SessionFilter` las excluye (§8).
+- Nuestro problema es **contigüidad/cobertura**, no retornos-cero. El remedio 5m
+  se justifica por el **colapso de huecos al agregar**, no por dilución.
+
+### Tarea A — captura Live sesión NFP (jue 2026-07-02)
+- NFP 8:30 ET **pre-market → invisible al pipeline** (filtro de sesión, §8);
+  viernes 3 festivo.
+- **Primera corrida del motor Hurst sobre `LiveSource`.** NO es el estrés FOMC
+  (ese: 28–29 jul).
+- Conflicto de brief detectado por Claude Code y resuelto: "latencia en paralelo"
+  + "sin cambios de código" imposible con 1 WebSocket concurrente (plan gratuito).
+  Resuelto: wiring **aditivo** de `LatencyLogger` en `run_hurst.py`; motor byte a
+  byte intacto.
+- Smoke tests OK:
+  - Replay 17-jun → H/NaN **idénticos** a la verificación previa (prueba de
+    aditividad).
+  - Plumbing de latencia imprime (números basura por reloj sintético — ignorar).
+  - Conectividad live 25 s limpia.
+- Hallazgo: `python-dotenv` faltaba en el venv recreado — instalado. **Lección**:
+  recrear venv siempre desde `requirements.txt`.
+- Lanzamiento manual 9:00–9:15 ET. **Un solo Ctrl-C** al cerrar (esperar
+  resúmenes). Ensayo desde terminal del usuario OK; excepción de teardown de
+  websockets al Ctrl-C = cosmética, arreglo post-captura.
+- [x] Capturar sesión NFP; reportar métricas Hurst, cobertura AMD bajo volumen
+      NFP, divergencias Live↔Replay (§10). La latencia de esa sesión se PERDIÓ
+      (bug de Ctrl-C, corregido en §10); re-medición vs línea base §7 queda
+      como pendiente activo para la FOMC 28–29 jul.
+- [x] Revertir `SOURCE` a replay tras la captura (§10).
+- [x] Teardown limpio del WebSocket (§10).
+
+### Tarea B — AMD a 5m (después del reporte de Tarea A, por replay)
+- Parámetros fijados de antemano:
+  - Umbral de segmentación **derivado del timeframe**: tolerar 2× duración de
+    barra, cortar >2× (elimina el hardcode de 1m de §8).
+  - Ventana **60** a 5m.
+  - `BarResampler` alimenta el buffer desde el stream 1m (sin suscripción aparte).
+  - Ventanas 5m incompletas se **excluyen** (política §7).
+- [x] **Verificación (no calibración)** replay 15-jun y 17-jun: huecos de 1 min
+      desaparecen al agregar; huecos ≥180 s se reflejan coherentemente; ¿AMD
+      llena ventanas de 60? → hecha y documentada en §10 (respuesta: NO en
+      ninguna de las dos fechas; hipótesis del colapso de huecos falsificada).
+- Rama `feature/timeframe-aware-segmentation`; merge tras reporte.
+
+### Repo pública (2026-07-01)
+- **github.com/Elorro/hurst-terminal**, MIT, creada desde local (sin historia
+  previa → sin auditoría necesaria).
+- `.gitignore` antes de todo `add`; `git check-ignore .env` verificado;
+  duplicados de `backend/` eliminados (fuente única en raíz); `requirements.txt`
+  curado y pineado.
+- BITACORA y spec publicadas por decisión.
+- Carpeta local renombrada `terminal-trading` → `hurst-terminal`; venv recreado.
+
+## 10. Cierre Tarea A (Live NFP) y Tarea B (AMD a 5m) — jue 2026-07-02
+
+### Tarea A — primera corrida Live del motor (sesión completa 9:30–15:59 ET)
+- Estados (suma cuadra con lo impreso): NVDA 120 incompleto + 270 H = 390, sin
+  huecos; AMD 120 + 140 H + 120 segmentación = 380.
+- AMD, hallazgo fino: los 10 minutos "faltantes" SÍ tenían barra en el feed,
+  pero PLANA (una sola transacción IEX) → excluidas por SessionFilter. La firma
+  de la ceguera AMD-IEX es volumen insuficiente, no ausencia de barra (hoy).
+- Corte único 13:27→13:30 (planas 13:28/13:29, gap 180 s). Reacumulación exacta:
+  120 barras presentes 13:30–15:33 → 119 retornos (NaN) → H a las 15:34.
+- **Costo de reconstrucción visto en vivo por primera vez**: a 1m/120, un hueco
+  de 3 min = ~2 h de ciego (13:30→15:34). Diseñado y aceptado en §8; hoy
+  cuantificado en producción. Motiva la Tarea B.
+- Datapoint cobertura: 15-jun run máx 109 → 0 H; 17-jun 122 → 2 H; hoy (NFP) H
+  continuo 11:30–13:27 y 15:34–15:59. **Cobertura AMD-IEX = f(volumen de sesión).**
+- **Live↔Replay: divergencia cero.** Replay del propio 02-jul reproduce la
+  captura exacta (faltantes, corte, estados y H idénticos).
+- **Latencia: PERDIDA** — el Ctrl-C saltó los resúmenes (bug, abajo). No se
+  estima. Re-medición: sesión FOMC 28–29 jul (además, caso de estrés de §7).
+
+### Fix de cierre ordenado (main) + revert
+- run_hurst.py absorbe la cancelación del Ctrl-C y vuelca ambos resúmenes ANTES
+  de salir; live.py señala stop→espera→close (cancelar a secas dejaba el socket
+  abierto: esa era la excepción cosmética de websockets). Motor intacto.
+- Verificado: replay 17-jun idéntico a la verificación previa; Ctrl-C a mitad
+  de replay imprime resúmenes parciales; smoke live 20 s sin traceback.
+- `SOURCE` revertido a "replay".
+
+### Tarea B — segmentación consciente del timeframe (rama feature/timeframe-aware-segmentation)
+- Umbral derivado del timeframe: tolerar ≤2× duración de barra, cortar >2×
+  (GAP_CUT_BARS=2; elimina el hardcode de 120 s). Cruce de día corta siempre.
+  AMD 5m/ventana 60 vía BarResampler sobre el MISMO stream 1m; ventanas 5m
+  incompletas excluidas y contadas (solo en sesión). NVDA 1m/120 intacta.
+- No-regresión: NVDA idéntica (390/390 líneas) en 15-jun, 17-jun y 02-jul.
+- Verificación (no calibración) 15/17-jun — coherencia 1m→5m exacta:
+  - 17-jun: 24 min ausentes + 33 planas → 17 ventanas excluidas (61+17=78 ✓),
+    4 gaps 600 s tolerados, 4 cortes >600 s, todos sobre huecos reales del 1m.
+  - 15-jun: 11 ausentes + 34 planas → 11 excluidas (67+11=78 ✓), 5 tolerados,
+    3 cortes.
+  - (a) matizada: el hueco de 1 min desaparece a 5m solo si el minuto tenía
+    barra plana (cuenta para completitud); la ausencia real del feed excluye la
+    ventana 5m entera (política §7) — más estricto, no más laxo.
+  - (b) cumplida: huecos ≥180 s → ventana incompleta y/o gap 5m, según caso.
+  - (c) **dato decisorio: AMD NO llena ventana 60 a 5m en ninguna de las dos
+    fechas** (corridas máx 29 y 31 de 60 → 0 H).
+- Observación extra (02-jul por replay, fuera del set pactado): con volumen NFP,
+  AMD 5m = 78/78 completas, 0 cortes, H continuo 14:30–15:55 — pasa por encima
+  del hueco que a 1m costó 2 h. Cobertura=volumen se sostiene también a 5m.
+- Observaciones registradas, NO aplicadas (§8: verificación ≠ calibración):
+  60×5m = 305 min de calentamiento → aun en día perfecto, H solo en la última
+  ~1.5 h de sesión; en días tranquilos, nada. "Otra ventana/timeframe se vería
+  mejor" queda como observación.
+- [x] Merge a main tras confirmación del reporte (confirmada 2026-07-03).
+
+### Decisión AMD — cierre del capítulo
+- **AMD-IEX declarada fuera del alcance del Hurst intradía.** Espacio de diseño
+  agotado con verificación en dos timeframes: 1m/120 marginal y día-dependiente;
+  5m/60 sin cobertura en días tranquilos Y ciego al evento (calentamiento 305
+  min → primera H ~14:35 > anuncio 14:00); ≥15m imposible intradía (ventana ≥50
+  → ≥750 min > 390 de sesión). Causa raíz: resolución del feed, no parámetros.
+- Abandonar 5m/60 tras la verificación NO es calibración: la verificación
+  **falsificó la hipótesis de §9** (el colapso de huecos al agregar solo aplica
+  a huecos-plana; la ausencia real excluye la ventana entera).
+- Camino futuro documentado: feed SIP de pago devuelve a AMD al 1m/120. NO se
+  toma por anticipado; se reevalúa con evidencia de uso tras semanas NVDA-solo.
+- Pipeline queda: **NVDA 1m/120 único símbolo con H.** AMD permanece para
+  barras/fases futuras (watchlist de datos ≠ watchlist de Hurst en config).
+- Roadmap registrado (NO construir ahora): multi-timeframe hacia ARRIBA (barras
+  diarias para régimen swing — sin problema de cobertura IEX); ampliación de
+  watchlist con examen de admisión por símbolo (replay sobre fechas fijadas
+  de antemano, tranquila + evento, antes de confiar). Hito de validación previo
+  a todo: **FOMC 28–29 jul con NVDA**.

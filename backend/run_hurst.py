@@ -37,10 +37,10 @@ def print_header() -> None:
     per_symbol = "  ".join(
         f"{s} {config.BAR_MINUTES.get(s, 1)}m/ventana "
         f"{config.HURST_WINDOWS.get(s, config.HURST_WINDOW)}"
-        for s in config.WATCHLIST
+        for s in config.HURST_WATCHLIST
     )
     print(
-        f"Fuente: {config.SOURCE}  |  watchlist: {config.WATCHLIST}  |  "
+        f"Fuente: {config.SOURCE}  |  watchlist Hurst: {config.HURST_WATCHLIST}  |  "
         f"feed: {config.FEED}"
     )
     print(f"Timeframe/ventana: {per_symbol}  |  corte de segmento: gap > 2x barra")
@@ -91,9 +91,12 @@ def print_summary(engine: HurstEngine, incomplete_windows: Counter | None = None
 
 
 async def run() -> None:
-    source = build_source()
+    # El runner de Hurst suscribe SOLO su watchlist (HURST_WATCHLIST), no la de
+    # datos: un símbolo fuera del alcance del motor no se descarga ni se filtra
+    # aguas abajo — simplemente no entra.
+    source = build_source(config.HURST_WATCHLIST)
     engine = HurstEngine(
-        config.WATCHLIST,
+        config.HURST_WATCHLIST,
         window=config.HURST_WINDOW,
         windows=config.HURST_WINDOWS,
         bar_seconds={s: m * 60 for s, m in config.BAR_MINUTES.items()},
@@ -136,7 +139,7 @@ async def run() -> None:
         # Distingue la espera silenciosa pre-9:30 (normal: el feed solo fluye en
         # sesión) de un cuelgue real. La suscripción ya se emitió al iniciar stream().
         print(
-            f"Suscrito a {config.WATCHLIST} vía WebSocket (modo {config.LIVE_MODE}). "
+            f"Suscrito a {config.HURST_WATCHLIST} vía WebSocket (modo {config.LIVE_MODE}). "
             "Fuera de 9:30–16:00 ET no fluyen barras: el silencio es normal, no "
             "un cuelgue. Esperando primera barra...",
             flush=True,
