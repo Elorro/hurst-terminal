@@ -33,7 +33,7 @@ FEED = "iex"
 # --- Selección de fuente ----------------------------------------------------
 # "replay" -> ReplaySource (histórico + reloj, determinista, corre a cualquier hora)
 # "live"   -> LiveSource (WebSocket en tiempo real, solo en horario de mercado)
-SOURCE = "live"
+SOURCE = "replay"
 
 # --- Modo de suscripción para LiveSource ------------------------------------
 # "A" (default): suscribirse a `bars` -> Alpaca entrega la vela de 1m ya agregada.

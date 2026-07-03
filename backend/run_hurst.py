@@ -88,12 +88,20 @@ async def run() -> None:
             "un cuelgue. Esperando primera barra...",
             flush=True,
         )
-    async for bar in source.stream():
-        # recv_ts lo antes posible tras recibir la barra (latencia de entrega).
-        logger.record(bar.symbol, bar.timestamp, datetime.now(_ET))
-        res = engine.on_bar(bar)
-        if res is not None:
-            print_result(res)
+    try:
+        async for bar in source.stream():
+            # recv_ts lo antes posible tras recibir la barra (latencia de entrega).
+            logger.record(bar.symbol, bar.timestamp, datetime.now(_ET))
+            res = engine.on_bar(bar)
+            if res is not None:
+                print_result(res)
+    except asyncio.CancelledError:
+        # Ctrl-C: asyncio.run() convierte el SIGINT en cancelación de esta tarea.
+        # Absorberla aquí (en vez de dejarla llegar al handler de __main__)
+        # garantiza que los resúmenes en memoria se vuelquen ANTES de salir.
+        # El teardown del WebSocket ya corrió: el finally de stream() se ejecuta
+        # mientras la cancelación se propaga por el async-for.
+        print("\nDetenido por el usuario. Volcando resúmenes parciales...")
     print_summary(engine)
     print_latency_summary(logger)
 

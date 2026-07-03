@@ -70,5 +70,19 @@ class LiveSource(DataSource):
             while True:
                 yield await queue.get()
         finally:
-            runner.cancel()
+            # Cierre ordenado: primero la señal de stop, para que el loop del SDK
+            # cierre el WebSocket por su camino normal (_consume ve la señal y
+            # llama close()). Cancelar primero mataba _run_forever a mitad de
+            # recv y dejaba el socket abierto: de ahí la excepción cosmética de
+            # websockets al Ctrl-C. _consume tarda hasta ~5 s en mirar la señal
+            # (timeout interno del recv); si no sale en 7 s, cancelar y silenciar.
             await self._stream.stop_ws()
+            try:
+                await asyncio.wait_for(runner, timeout=7)
+            except (TimeoutError, asyncio.CancelledError):
+                runner.cancel()
+                try:
+                    await runner
+                except (asyncio.CancelledError, Exception):
+                    pass
+            await self._stream.close()  # no-op si el SDK ya cerró el socket
