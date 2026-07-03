@@ -45,10 +45,12 @@ _ET = ZoneInfo("America/New_York")
 SESSION_OPEN = time(9, 30)
 SESSION_CLOSE = time(16, 0)
 
-# Umbral de contigüidad temporal, fijado por la física del dato, NO calibrable:
-# barras contiguas distan 60s; una barra faltante son 120s (se tolera); más de
-# eso es un hueco real y corta el segmento.
-GAP_CUT_SECONDS = 120
+# Umbral de contigüidad temporal, derivado del timeframe y fijado por la física
+# del dato, NO calibrable: barras contiguas distan 1 duración de barra; una
+# barra faltante son 2 duraciones (se tolera); más que eso es un hueco real y
+# corta el segmento. A 1m: tolerar 120 s, cortar >120 s. A 5m: tolerar 600 s,
+# cortar >600 s. El cruce de día corta SIEMPRE, a cualquier timeframe.
+GAP_CUT_BARS = 2
 
 # --- Etiquetas de exclusión / estado (claves de las métricas) ---------------
 EXCLUDED_OUT_OF_SESSION = "excluded_out_of_session"
@@ -92,16 +94,20 @@ class HurstBuffer:
 
     - Recalcular H sólo al CIERRE de vela (lo hace el motor llamando a `compute`).
     - Segmentación antes de correr `dfa()`:
-        * gap real entre timestamps consecutivos > 2 min  -> corte de segmento.
+        * gap real entre timestamps consecutivos > 2 duraciones de barra
+          (GAP_CUT_BARS)                                  -> corte de segmento.
         * cruce de día                                    -> corta SIEMPRE.
       Si la ventana no contiene un segmento contiguo de longitud >= N -> H = NaN.
     - Mientras el buffer no tenga N retornos válidos       -> H = NaN.
     """
 
-    def __init__(self, window: int):
+    def __init__(self, window: int, bar_seconds: int = 60):
         if window < 1:
             raise ValueError("window debe ser >= 1")
+        if bar_seconds < 1:
+            raise ValueError("bar_seconds debe ser >= 1")
         self.window = window
+        self._gap_cut = GAP_CUT_BARS * bar_seconds
         self._returns: list[_Return] = []
         self._prev: Optional[tuple[datetime, float]] = None  # (ts_et, close) válido anterior
 
@@ -112,7 +118,7 @@ class HurstBuffer:
             prev_ts, prev_close = self._prev
             gap = (ts_et - prev_ts).total_seconds()
             same_day = ts_et.date() == prev_ts.date()
-            is_break = (gap > GAP_CUT_SECONDS) or (not same_day)
+            is_break = (gap > self._gap_cut) or (not same_day)
             self._returns.append(
                 _Return(ts=ts_et, logret=math.log(close / prev_close), is_break=is_break)
             )
@@ -164,16 +170,33 @@ class HurstEngine:
     polimórfico vía `on_bar(bar)` por cada vela cerrada — idéntico con Live o
     Replay. Lleva métricas de observabilidad por símbolo."""
 
-    def __init__(self, symbols: Iterable[str], window: int = 120):
+    def __init__(
+        self,
+        symbols: Iterable[str],
+        window: int = 120,
+        windows: Optional[dict[str, int]] = None,
+        bar_seconds: Optional[dict[str, int]] = None,
+    ):
+        """`windows` y `bar_seconds` son overrides por símbolo (ventana Hurst y
+        duración de barra en segundos); un símbolo ausente usa `window` y 60 s.
+        El umbral de corte de cada buffer se deriva de su duración de barra."""
         self.window = window
+        self._windows = dict(windows or {})
+        self._bar_seconds = dict(bar_seconds or {})
         self._filter = SessionFilter()
-        self._buffers: dict[str, HurstBuffer] = {s: HurstBuffer(window) for s in symbols}
-        self.stats: dict[str, Counter] = {s: Counter() for s in symbols}
+        self._buffers: dict[str, HurstBuffer] = {s: self._new_buffer(s) for s in symbols}
+        self.stats: dict[str, Counter] = {s: Counter() for s in self._buffers}
+
+    def _new_buffer(self, symbol: str) -> HurstBuffer:
+        return HurstBuffer(
+            self._windows.get(symbol, self.window),
+            self._bar_seconds.get(symbol, 60),
+        )
 
     def _buffer(self, symbol: str) -> HurstBuffer:
         buf = self._buffers.get(symbol)
         if buf is None:  # símbolo no anunciado al construir: alta perezosa
-            buf = self._buffers[symbol] = HurstBuffer(self.window)
+            buf = self._buffers[symbol] = self._new_buffer(symbol)
             self.stats[symbol] = Counter()
         return buf
 

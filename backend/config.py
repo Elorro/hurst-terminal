@@ -27,6 +27,16 @@ TIMEFRAME = "1Min"             # timeframe inicial de Fase 1
 # "verdadero" único, y NO se optimiza buscando estabilidad (eso sería sobreajuste).
 HURST_WINDOW = 120
 
+# --- Timeframe por símbolo (Tarea B, bitácora §9) ----------------------------
+# AMD migra a 5m/ventana 60: la causa raíz de su falta de H a 1m es la
+# resolución del feed IEX, no la ventana. NVDA sigue a 1m/120. Escalas NO
+# comparables entre sí: decisión tomada y documentada. Ventana 60 fijada por
+# física (dfa() >= 50; sesión = 78 barras de 5m), NO calibrable.
+# Las velas 5m salen del BarResampler local sobre el MISMO stream de 1m (una
+# sola suscripción); ventanas 5m incompletas se excluyen (política §7).
+BAR_MINUTES = {"AMD": 5}      # símbolo ausente -> barras de 1m
+HURST_WINDOWS = {"AMD": 60}   # símbolo ausente -> HURST_WINDOW
+
 # Feed del plan gratuito: IEX explícito (no asumir el default).
 FEED = "iex"
 
