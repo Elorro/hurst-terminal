@@ -71,3 +71,11 @@ REPLAY_SPEED = 0.0
 # Margen de seguridad para el feed gratuito IEX: los datos de los últimos 15 min
 # están bloqueados. ReplaySource recorta el `end` para no rozar esa ventana.
 RECENCY_MARGIN_MINUTES = 16
+
+# --- Persistencia de latencia (bitácora §11) --------------------------------
+# El resumen en consola no permite reconstruir la distribución horaria de la
+# latencia: en la FOMC del 29-jul las muestras murieron con el proceso. Con esto
+# cada muestra se escribe a disco en el momento (CSV por corrida).
+# `outputs/` está en .gitignore (y `*.csv` también): las salidas NO se commitean.
+LATENCY_CSV = True
+LATENCY_DIR = Path(__file__).resolve().parent.parent / "outputs"

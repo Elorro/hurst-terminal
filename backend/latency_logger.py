@@ -11,6 +11,13 @@ barra llega a nuestro proceso — no incluye los 60 s de formación de la vela.
 Al cierre de sesión o bajo demanda, `print_summary()` imprime min/mediana/p95/max
 por símbolo. La mediana dice si el flujo es sano; el p95 delata problemas
 intermitentes (stalls del WebSocket, pausas de GC, reconexiones).
+
+Persistencia (bitácora §11): el resumen NO responde la pregunta de §7 — si la
+cola de latencia se concentra en el evento o está repartida. Por eso, con
+`csv_path`, cada muestra se escribe a disco **en el momento** (línea a línea,
+flush inmediato): un corte de red o un kill pierde lo que no ocurrió, no lo ya
+capturado. La escritura es best-effort: si falla, se avisa y la captura sigue —
+persistir la medición nunca puede tumbar la corrida que se está midiendo.
 """
 
 from __future__ import annotations
@@ -20,7 +27,10 @@ import statistics
 import subprocess
 from dataclasses import dataclass
 from datetime import datetime, timedelta
+from pathlib import Path
 from zoneinfo import ZoneInfo
+
+CSV_HEADER = "symbol,bar_ts,recv_ts,latency_s"
 
 _ET = ZoneInfo("America/New_York")
 
@@ -64,12 +74,60 @@ class LatencySample:
 
 
 class LatencyLogger:
-    def __init__(self, period_seconds: float = 60.0, echo: bool = False):
+    def __init__(
+        self,
+        period_seconds: float = 60.0,
+        echo: bool = False,
+        csv_path: str | Path | None = None,
+    ):
         self._period = timedelta(seconds=period_seconds)
         self._echo = echo
         self._by_symbol: dict[str, list[float]] = {}
         self.samples: list[LatencySample] = []
         self.ntp_ok = ntp_synced()
+        self.csv_path: Path | None = Path(csv_path) if csv_path else None
+        self._fh = None
+        if self.csv_path is not None:
+            self._open_sink()
+
+    def _open_sink(self) -> None:
+        """Abre el CSV en modo línea-a-línea (buffering=1: cada `\\n` va al SO).
+
+        Se abre al construir, no en la primera muestra: así el archivo existe
+        desde el arranque y se puede seguir con `tail -f` durante la sesión.
+        """
+        try:
+            self.csv_path.parent.mkdir(parents=True, exist_ok=True)
+            new = not self.csv_path.exists() or self.csv_path.stat().st_size == 0
+            self._fh = open(self.csv_path, "a", buffering=1, newline="")
+            if new:
+                self._fh.write(CSV_HEADER + "\n")
+        except OSError as e:
+            print(f"[lat] aviso: no se pudo abrir {self.csv_path} ({e}); "
+                  "las muestras solo quedan en memoria", flush=True)
+            self._fh = None
+
+    def _write_sample(self, s: LatencySample) -> None:
+        if self._fh is None:
+            return
+        try:
+            self._fh.write(
+                f"{s.symbol},{s.bar_ts.isoformat()},{s.recv_ts.isoformat()},"
+                f"{s.latency_s:.3f}\n"
+            )
+        except OSError as e:
+            print(f"[lat] aviso: fallo al escribir muestra ({e}); "
+                  "se desactiva el volcado a disco", flush=True)
+            self.close()
+
+    def close(self) -> None:
+        """Idempotente: cerrar dos veces no es error."""
+        if self._fh is not None:
+            try:
+                self._fh.close()
+            except OSError:
+                pass
+            self._fh = None
 
     def record(
         self, symbol: str, bar_ts: datetime, recv_ts: datetime | None = None
@@ -82,6 +140,7 @@ class LatencyLogger:
         s = LatencySample(symbol, bar_ts_et, recv_ts_et, latency)
         self._by_symbol.setdefault(symbol, []).append(latency)
         self.samples.append(s)
+        self._write_sample(s)
         if self._echo:
             print(
                 f"    [lat] {symbol:<5} bar={bar_ts_et:%H:%M:%S} "

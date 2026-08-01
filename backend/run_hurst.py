@@ -13,6 +13,7 @@ import asyncio
 import math
 from collections import Counter
 from datetime import datetime
+from pathlib import Path
 from zoneinfo import ZoneInfo
 
 import config
@@ -66,6 +67,21 @@ def print_latency_summary(logger: LatencyLogger) -> None:
     # Solo informativo en replay (reloj sintético; los números no son latencia
     # real). En live mide recv_ts - (bar_ts + 60s): retardo de entrega del feed.
     logger.print_summary()
+    if logger.csv_path is not None:
+        print(f"muestras individuales: {logger.csv_path}")
+
+
+def latency_csv_path() -> Path | None:
+    """Un archivo por corrida: la fuente y el día de sesión van en el nombre, así
+    un CSV de replay (reloj sintético) nunca se confunde con uno de live."""
+    if not getattr(config, "LATENCY_CSV", False):
+        return None
+    session = (
+        config.REPLAY_DATE if config.SOURCE == "replay"
+        else datetime.now(_ET).strftime("%Y-%m-%d")
+    )
+    stamp = datetime.now(_ET).strftime("%H%M%S")
+    return Path(config.LATENCY_DIR) / f"latency_{config.SOURCE}_{session}_{stamp}.csv"
 
 
 def print_summary(engine: HurstEngine, incomplete_windows: Counter | None = None) -> None:
@@ -101,7 +117,8 @@ async def run() -> None:
         windows=config.HURST_WINDOWS,
         bar_seconds={s: m * 60 for s, m in config.BAR_MINUTES.items()},
     )
-    logger = LatencyLogger(echo=False)  # latencia de entrega por barra de 1m
+    # latencia de entrega por barra de 1m; volcado incremental a disco (§11)
+    logger = LatencyLogger(echo=False, csv_path=latency_csv_path())
 
     # Timeframes >1m se derivan localmente del MISMO stream de 1m (una sola
     # suscripción). Separación de responsabilidades: el resampler agrega, el
@@ -173,6 +190,9 @@ async def run() -> None:
                 print_result(res)
     print_summary(engine, incomplete_windows)
     print_latency_summary(logger)
+    # Cierre explícito; cada muestra ya fue flusheada al escribirse, así que un
+    # cierre abrupto no pierde nada de lo capturado.
+    logger.close()
 
 
 if __name__ == "__main__":
