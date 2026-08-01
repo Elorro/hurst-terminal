@@ -79,3 +79,10 @@ RECENCY_MARGIN_MINUTES = 16
 # `outputs/` está en .gitignore (y `*.csv` también): las salidas NO se commitean.
 LATENCY_CSV = True
 LATENCY_DIR = Path(__file__).resolve().parent.parent / "outputs"
+
+# --- Persistencia del stream de Hurst ---------------------------------------
+# Mismo motivo y mismo destino (`LATENCY_DIR`): hoy los H/D solo se imprimen y
+# mueren con el proceso, y acumular evidencia sobre varios eventos macro exige
+# comparar sesiones sin copiar-pegar consolas. Una fila por barra procesada,
+# estados NaN incluidos (son dato de régimen, §8).
+HURST_CSV = True

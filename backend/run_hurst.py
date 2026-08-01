@@ -28,6 +28,7 @@ from hurst import (
     SESSION_OPEN,
     HurstEngine,
 )
+from hurst_logger import HurstLogger
 from latency_logger import LatencyLogger
 from main import build_source
 
@@ -71,17 +72,18 @@ def print_latency_summary(logger: LatencyLogger) -> None:
         print(f"muestras individuales: {logger.csv_path}")
 
 
-def latency_csv_path() -> Path | None:
+def run_csv_path(prefix: str, flag: str, stamp: str) -> Path | None:
     """Un archivo por corrida: la fuente y el día de sesión van en el nombre, así
-    un CSV de replay (reloj sintético) nunca se confunde con uno de live."""
-    if not getattr(config, "LATENCY_CSV", False):
+    un CSV de replay (reloj sintético, día histórico) nunca se confunde con uno
+    de live. `stamp` es común a todos los CSV de una misma corrida: empareja el
+    de latencia con el de Hurst sin adivinar."""
+    if not getattr(config, flag, False):
         return None
     session = (
         config.REPLAY_DATE if config.SOURCE == "replay"
         else datetime.now(_ET).strftime("%Y-%m-%d")
     )
-    stamp = datetime.now(_ET).strftime("%H%M%S")
-    return Path(config.LATENCY_DIR) / f"latency_{config.SOURCE}_{session}_{stamp}.csv"
+    return Path(config.LATENCY_DIR) / f"{prefix}_{config.SOURCE}_{session}_{stamp}.csv"
 
 
 def print_summary(engine: HurstEngine, incomplete_windows: Counter | None = None) -> None:
@@ -117,8 +119,11 @@ async def run() -> None:
         windows=config.HURST_WINDOWS,
         bar_seconds={s: m * 60 for s, m in config.BAR_MINUTES.items()},
     )
+    stamp = datetime.now(_ET).strftime("%H%M%S")  # mismo sello para los CSV de esta corrida
     # latencia de entrega por barra de 1m; volcado incremental a disco (§11)
-    logger = LatencyLogger(echo=False, csv_path=latency_csv_path())
+    logger = LatencyLogger(echo=False, csv_path=run_csv_path("latency", "LATENCY_CSV", stamp))
+    # stream de H/D a disco: una fila por barra procesada, estados NaN incluidos
+    hurst_csv = HurstLogger(csv_path=run_csv_path("hurst", "HURST_CSV", stamp))
 
     # Timeframes >1m se derivan localmente del MISMO stream de 1m (una sola
     # suscripción). Separación de responsabilidades: el resampler agrega, el
@@ -171,6 +176,7 @@ async def run() -> None:
             res = engine.on_bar(bar_in)
             if res is not None:
                 print_result(res)
+                hurst_csv.record(res)
     except asyncio.CancelledError:
         # Ctrl-C: asyncio.run() convierte el SIGINT en cancelación de esta tarea.
         # Absorberla aquí (en vez de dejarla llegar al handler de __main__)
@@ -188,10 +194,15 @@ async def run() -> None:
             res = engine.on_bar(bar_in)
             if res is not None:
                 print_result(res)
+                hurst_csv.record(res)
     print_summary(engine, incomplete_windows)
+    if hurst_csv.csv_path is not None:
+        print(f"    {'filas de H/D escritas':<32} {hurst_csv.rows:>6}")
+        print(f"  -> {hurst_csv.csv_path}")
     print_latency_summary(logger)
-    # Cierre explícito; cada muestra ya fue flusheada al escribirse, así que un
-    # cierre abrupto no pierde nada de lo capturado.
+    # Cierre explícito; cada fila/muestra ya fue flusheada al escribirse, así que
+    # un cierre abrupto no pierde nada de lo capturado.
+    hurst_csv.close()
     logger.close()
 
 
