@@ -366,3 +366,68 @@
   watchlist con examen de admisión por símbolo (replay sobre fechas fijadas
   de antemano, tranquila + evento, antes de confiar). Hito de validación previo
   a todo: **FOMC 28–29 jul con NVDA**.
+
+## 11. Captura Live FOMC 2026-07-29 (NVDA 1m/120) — hito §10 cumplido
+
+### Verificación Live↔Replay: el motor pasa el estrés
+- Replay del propio 29-jul contra la captura live: **254/265 H idénticos a 3
+  decimales**; las 11 diferencias son de **+0.001**, sin patrón temporal —
+  correcciones tardías del histórico (el REST devuelve la barra ya revisada), no
+  divergencia de motor.
+- **Ventana del anuncio 36/36 exacta** (13:45–14:20 ET, cero discrepancias).
+  **H a las 14:00 = 0.433 en ambas.** Justo donde importa, la captura live es
+  reproducible bit a bit.
+- Cumple el hito de validación de §10: el pipeline sobrevive a la sesión de
+  estrés que se venía difiriendo desde §7.
+
+### Corte de red 09:31 ET — causa raíz verificada, NO fue el gestor de sesión
+- ~09:31 ET el proceso pierde el feed. **Causa raíz: DNS/upstream del ISP**,
+  verificada en journal — `systemd-resolved` degradado y NetworkManager cayendo
+  de `CONNECTED_SITE` a `GLOBAL` en la misma ventana; corroborado por
+  `dnf-makecache` fallando exactamente igual a la misma hora (proceso ajeno al
+  terminal → descarta cualquier causa interna).
+- **Explícitamente NO fue swayidle/swaylock** (la hipótesis con la que se entró
+  a diagnosticar) **ni el wifi local**. Registrado para no repetir el diagnóstico
+  equivocado.
+- Costo: **3 minutos de mercado real perdidos (09:32–09:34)**,
+  **irrecuperables**: el WebSocket entrega solo lo que ocurre mientras está
+  conectado y **Alpaca no hace backfill** al reconectar.
+- **Huella total acotada**: primer H a las **11:35 en vez de 11:30**, y **265 H
+  en vez de 270**. Nada más se degradó.
+- **Convergencia inmediata por diseño**: el hueco corta el segmento (§8), el
+  buffer reacumula y a partir del primer H la serie es la misma que habría sido.
+  El costo de un corte es un retraso acotado, no una sesión contaminada — el
+  comportamiento que §8 prometía, visto bajo evento real.
+
+### Firma de régimen: anecdótica, coherente solo en parte con junio
+- Coinciden **dos de tres patas** con el replay FOMC 17-jun (§9): antesala
+  **anti-persistente** y **mínimo del día en las 14:00** (H=0.433).
+- **La pata tendencial diverge**: 29-jul **80/106 min con H>0.6** contra
+  **5/106 min** en 17-jun. La fase post-anuncio no se repite.
+- **n=2 → anécdota, no patrón.** No se deriva de aquí ninguna regla ni umbral;
+  queda como observación (§8: verificación ≠ calibración).
+
+### Latencia bajo estrés: PERDIDA otra vez, por otra razón
+- El bug de Ctrl-C de §10 está corregido, pero `LatencyLogger` **no persiste las
+  muestras**: los resúmenes se imprimieron y el detalle murió con el proceso.
+- Lo derivable del resumen: **mediana 0.36 s** (sana, comparable a la línea base
+  §7) pero **cola un orden de magnitud peor** que esa base, con **~20 barras
+  ≥1.49 s**.
+- **Irrecuperable**: la distribución horaria — lo único que respondería si la
+  cola se concentra en las 14:00 o está repartida, que es la pregunta real.
+- **El pendiente de §7 (latencia bajo estrés vs línea base) sigue ABIERTO.** Dos
+  sesiones de evento gastadas sin medirlo.
+
+### Pendientes activos
+- [ ] **Persistir las muestras de latencia a disco** (CSV por sesión, no solo
+      resumen en consola) — ANTES del próximo FOMC. Sin esto la re-medición
+      vuelve a perderse.
+- [ ] Re-medir latencia bajo estrés en el **próximo FOMC** y comparar contra la
+      línea base de §7 (mediana 0.27–0.28 / p95 0.36–0.37 / max 0.42).
+- [ ] **Requisito de procedimiento revisado**: el objetivo NO es inhibir
+      swayidle (hipótesis falsificada arriba) sino **detectar y sobrevivir
+      cortes de red** — visibilidad del estado de conexión y del hueco que deja,
+      dado que el backfill no existe.
+- [ ] Decisión **no obvia**: ¿rellenar por REST los minutos perdidos tras una
+      reconexión? Mezcla dos fuentes en la misma serie y toca el borde de
+      entrada al buffer → **discutir contra §8**, no implementar ahora.
