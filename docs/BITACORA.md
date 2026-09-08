@@ -431,3 +431,71 @@
 - [ ] Decisión **no obvia**: ¿rellenar por REST los minutos perdidos tras una
       reconexión? Mezcla dos fuentes en la misma serie y toca el borde de
       entrada al buffer → **discutir contra §8**, no implementar ahora.
+
+## 12. Protocolo de etiquetado para acumulación de evidencia (definido 2026-09-04, antes de la 1ª captura formal)
+
+### Motivación
+- Con **n=2** (FOMC 17-jun por replay, FOMC 29-jul live) hay observaciones
+  sugerentes pero **no patrón** (§11). Para que "acumular evidencia" no degenere
+  en coleccionar confirmaciones, se fija **de antemano** qué se mide de cada
+  sesión.
+- Es §8 aplicado a la observación, no al código: **verificación ≠ calibración**.
+  Las ventanas y métricas se fijan **ahora**; no se eligen retroactivamente según
+  lo que confirme.
+
+### Hipótesis primaria (falsable, test binario por sesión)
+- **El minuto del H mínimo global de la sesión regular (9:30–16:00 ET) cae en
+  [hora_anuncio, hora_anuncio + 5 min].** Acierto/fallo por sesión, sin matices.
+- Se exige **mínimo global**, no local: con mínimos locales el test se
+  trivializa (siempre habría uno cerca).
+
+### Sub-registro anti-trivialidad (obligatorio en cada sesión)
+- Registrar también el **minuto del mayor salto de precio del día**, con esta
+  definición operacional **fijada el 2026-09-04** (no elegible retroactivamente):
+  **el minuto con el mayor |log-retorno| entre barras consecutivas de la sesión
+  regular (9:30–16:00 ET)**, computado **post-hoc desde las barras crudas** — no
+  desde el CSV de H/D (que no trae precio) y **sin instrumentar el motor**.
+- **Por qué |log-retorno| y no rango de vela**: el H se calcula sobre
+  log-retornos, así que el shock que puede mover el indicador es el log-retorno.
+  Medir el salto con **la misma cantidad** que alimenta el DFA hace la
+  comparación limpia; el rango de vela introduciría una métrica distinta de la
+  que el indicador realmente ve.
+- Si el mínimo de H **coincide siempre** con el mayor salto → el indicador solo
+  sigue al shock de precio: caso **trivial**, informa la hora del anuncio, que ya
+  se conocía de antemano.
+- Si el mínimo cae **a veces** en un minuto sin el mayor salto → ahí hay algo que
+  el precio crudo no da. Esa es la única lectura que justifica el indicador.
+
+### Secundarias (descriptivas, SIN test binario)
+- Media de H y **reparto de régimen** (minutos con H<0.45 / 0.45–0.55 / >0.55) en
+  dos ventanas fijas por reloj:
+  - **antesala**: [anuncio−60, anuncio]
+  - **post**: [anuncio+15, anuncio+120]
+- Se **observan**, no se les exige confirmar nada. La fase post-anuncio **ya
+  divergió** entre jun y jul (§11: 5/106 vs 80/106 min con H>0.6): eso la
+  descalifica como hipótesis y la deja como descripción.
+- El post arranca en **+15 min** para no solaparse con la **rueda de prensa
+  (14:30 ET)**, que es un evento distinto del comunicado.
+
+### Reglas de registro
+- **Muestra completa**: toda sesión capturada entra en la tabla, confirme o no la
+  firma. Defensa explícita contra **sesgo de supervivencia**.
+- **Variable de estratificación**: registrar si el evento trae **dot plot / SEP**.
+  Indicio con n=2 de reacción más intensa con SEP (17-jun **con** SEP: mín
+  H=0.350; 29-jul **sin** SEP: mín H=0.433). **No promediar con/sin SEP sin
+  separar.**
+- **FOMC vs NFP/CPI = series separadas.** El FOMC sale **en sesión** (14:00 ET) y
+  es testeable por la hipótesis primaria. NFP/CPI salen **pre-market (8:30 ET)**:
+  invisibles al pipeline salvo por la apertura ya digerida (§9) — el anuncio ni
+  siquiera cae dentro de la ventana de datos. Van como **observación secundaria
+  con su propia lógica** (reacción en apertura), **NO** en la misma tabla del
+  test primario.
+
+### Techo de poder estadístico (reconocido de antemano)
+- ~**8 FOMC/año**, de los cuales **4 con SEP**. Esto produce **indicios
+  direccionales en meses, no prueba**. Registrar honestamente; no sobreinterpretar
+  n chico.
+
+### Próxima captura formal
+- **FOMC 16-sep (con dot plot), anuncio 14:00 ET.** Primera bajo este protocolo y
+  primera con SEP bajo **persistencia completa** (H/D y latencia a CSV, §11).
