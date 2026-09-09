@@ -1,5 +1,8 @@
 # Bitácora de sesión — Terminal Nasdaq
 
+*Engineering logbook (Spanish): the working record of decisions, reversals and
+verifications, kept in the author's primary working language.*
+
 > Sesión de arquitectura y arranque de Fase 1. Registro de decisiones, hallazgos
 > verificados y pendientes. Sirve como input del brief de Fase 2.
 > Fecha de sesión: sábado 2026-06-20.

@@ -1,0 +1,2740 @@
+{
+  "source_csv": "hurst_replay_2026-06-17_102904.csv",
+  "symbol": "NVDA",
+  "session_date": "2026-06-17",
+  "timeframe": "1m",
+  "window": 120,
+  "note": "H/D as computed by the engine; null means no defined H (incomplete window or segment break), never 0.",
+  "series": [
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T09:30:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T09:31:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T09:32:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T09:33:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T09:34:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T09:35:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T09:36:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T09:37:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T09:38:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T09:39:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T09:40:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T09:41:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T09:42:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T09:43:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T09:44:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T09:45:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T09:46:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T09:47:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T09:48:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T09:49:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T09:50:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T09:51:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T09:52:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T09:53:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T09:54:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T09:55:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T09:56:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T09:57:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T09:58:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T09:59:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T10:00:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T10:01:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T10:02:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T10:03:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T10:04:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T10:05:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T10:06:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T10:07:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T10:08:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T10:09:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T10:10:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T10:11:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T10:12:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T10:13:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T10:14:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T10:15:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T10:16:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T10:17:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T10:18:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T10:19:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T10:20:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T10:21:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T10:22:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T10:23:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T10:24:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T10:25:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T10:26:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T10:27:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T10:28:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T10:29:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T10:30:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T10:31:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T10:32:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T10:33:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T10:34:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T10:35:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T10:36:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T10:37:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T10:38:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T10:39:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T10:40:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T10:41:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T10:42:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T10:43:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T10:44:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T10:45:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T10:46:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T10:47:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T10:48:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T10:49:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T10:50:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T10:51:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T10:52:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T10:53:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T10:54:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T10:55:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T10:56:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T10:57:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T10:58:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T10:59:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T11:00:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T11:01:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T11:02:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T11:03:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T11:04:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T11:05:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T11:06:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T11:07:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T11:08:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T11:09:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T11:10:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T11:11:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T11:12:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T11:13:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T11:14:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T11:15:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T11:16:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T11:17:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T11:18:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T11:19:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T11:20:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T11:21:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T11:22:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T11:23:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T11:24:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T11:25:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T11:26:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T11:27:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T11:28:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T11:29:00-04:00",
+      "H": null,
+      "D": null,
+      "status": "nan_incomplete"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T11:30:00-04:00",
+      "H": 0.590909,
+      "D": 1.409091,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T11:31:00-04:00",
+      "H": 0.587175,
+      "D": 1.412825,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T11:32:00-04:00",
+      "H": 0.602755,
+      "D": 1.397245,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T11:33:00-04:00",
+      "H": 0.599951,
+      "D": 1.400049,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T11:34:00-04:00",
+      "H": 0.594176,
+      "D": 1.405824,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T11:35:00-04:00",
+      "H": 0.614159,
+      "D": 1.385841,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T11:36:00-04:00",
+      "H": 0.617378,
+      "D": 1.382622,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T11:37:00-04:00",
+      "H": 0.57329,
+      "D": 1.42671,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T11:38:00-04:00",
+      "H": 0.595724,
+      "D": 1.404276,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T11:39:00-04:00",
+      "H": 0.585898,
+      "D": 1.414102,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T11:40:00-04:00",
+      "H": 0.60743,
+      "D": 1.39257,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T11:41:00-04:00",
+      "H": 0.603716,
+      "D": 1.396284,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T11:42:00-04:00",
+      "H": 0.610129,
+      "D": 1.389871,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T11:43:00-04:00",
+      "H": 0.617532,
+      "D": 1.382468,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T11:44:00-04:00",
+      "H": 0.638776,
+      "D": 1.361224,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T11:45:00-04:00",
+      "H": 0.64731,
+      "D": 1.35269,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T11:46:00-04:00",
+      "H": 0.650274,
+      "D": 1.349726,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T11:47:00-04:00",
+      "H": 0.591266,
+      "D": 1.408734,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T11:48:00-04:00",
+      "H": 0.577431,
+      "D": 1.422569,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T11:49:00-04:00",
+      "H": 0.554325,
+      "D": 1.445675,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T11:50:00-04:00",
+      "H": 0.673895,
+      "D": 1.326105,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T11:51:00-04:00",
+      "H": 0.673981,
+      "D": 1.326019,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T11:52:00-04:00",
+      "H": 0.622792,
+      "D": 1.377208,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T11:53:00-04:00",
+      "H": 0.561618,
+      "D": 1.438382,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T11:54:00-04:00",
+      "H": 0.553279,
+      "D": 1.446721,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T11:55:00-04:00",
+      "H": 0.533427,
+      "D": 1.466573,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T11:56:00-04:00",
+      "H": 0.575095,
+      "D": 1.424905,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T11:57:00-04:00",
+      "H": 0.535992,
+      "D": 1.464008,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T11:58:00-04:00",
+      "H": 0.551885,
+      "D": 1.448115,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T11:59:00-04:00",
+      "H": 0.533749,
+      "D": 1.466251,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T12:00:00-04:00",
+      "H": 0.545728,
+      "D": 1.454272,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T12:01:00-04:00",
+      "H": 0.54947,
+      "D": 1.45053,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T12:02:00-04:00",
+      "H": 0.565166,
+      "D": 1.434834,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T12:03:00-04:00",
+      "H": 0.607414,
+      "D": 1.392586,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T12:04:00-04:00",
+      "H": 0.639778,
+      "D": 1.360222,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T12:05:00-04:00",
+      "H": 0.590311,
+      "D": 1.409689,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T12:06:00-04:00",
+      "H": 0.602377,
+      "D": 1.397623,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T12:07:00-04:00",
+      "H": 0.5717,
+      "D": 1.4283,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T12:08:00-04:00",
+      "H": 0.594107,
+      "D": 1.405893,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T12:09:00-04:00",
+      "H": 0.645082,
+      "D": 1.354918,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T12:10:00-04:00",
+      "H": 0.654788,
+      "D": 1.345212,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T12:11:00-04:00",
+      "H": 0.655585,
+      "D": 1.344415,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T12:12:00-04:00",
+      "H": 0.611064,
+      "D": 1.388936,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T12:13:00-04:00",
+      "H": 0.59907,
+      "D": 1.40093,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T12:14:00-04:00",
+      "H": 0.632472,
+      "D": 1.367528,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T12:15:00-04:00",
+      "H": 0.604387,
+      "D": 1.395613,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T12:16:00-04:00",
+      "H": 0.602369,
+      "D": 1.397631,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T12:17:00-04:00",
+      "H": 0.586579,
+      "D": 1.413421,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T12:18:00-04:00",
+      "H": 0.606043,
+      "D": 1.393957,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T12:19:00-04:00",
+      "H": 0.637344,
+      "D": 1.362656,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T12:20:00-04:00",
+      "H": 0.589866,
+      "D": 1.410134,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T12:21:00-04:00",
+      "H": 0.59129,
+      "D": 1.40871,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T12:22:00-04:00",
+      "H": 0.595225,
+      "D": 1.404775,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T12:23:00-04:00",
+      "H": 0.584628,
+      "D": 1.415372,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T12:24:00-04:00",
+      "H": 0.601454,
+      "D": 1.398546,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T12:25:00-04:00",
+      "H": 0.618553,
+      "D": 1.381447,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T12:26:00-04:00",
+      "H": 0.598839,
+      "D": 1.401161,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T12:27:00-04:00",
+      "H": 0.56318,
+      "D": 1.43682,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T12:28:00-04:00",
+      "H": 0.54809,
+      "D": 1.45191,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T12:29:00-04:00",
+      "H": 0.574927,
+      "D": 1.425073,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T12:30:00-04:00",
+      "H": 0.591454,
+      "D": 1.408546,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T12:31:00-04:00",
+      "H": 0.596985,
+      "D": 1.403015,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T12:32:00-04:00",
+      "H": 0.560778,
+      "D": 1.439222,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T12:33:00-04:00",
+      "H": 0.591026,
+      "D": 1.408974,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T12:34:00-04:00",
+      "H": 0.635538,
+      "D": 1.364462,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T12:35:00-04:00",
+      "H": 0.59859,
+      "D": 1.40141,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T12:36:00-04:00",
+      "H": 0.584371,
+      "D": 1.415629,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T12:37:00-04:00",
+      "H": 0.573192,
+      "D": 1.426808,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T12:38:00-04:00",
+      "H": 0.59997,
+      "D": 1.40003,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T12:39:00-04:00",
+      "H": 0.620847,
+      "D": 1.379153,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T12:40:00-04:00",
+      "H": 0.55443,
+      "D": 1.44557,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T12:41:00-04:00",
+      "H": 0.513233,
+      "D": 1.486767,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T12:42:00-04:00",
+      "H": 0.515802,
+      "D": 1.484198,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T12:43:00-04:00",
+      "H": 0.5255,
+      "D": 1.4745,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T12:44:00-04:00",
+      "H": 0.520148,
+      "D": 1.479852,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T12:45:00-04:00",
+      "H": 0.555832,
+      "D": 1.444168,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T12:46:00-04:00",
+      "H": 0.606611,
+      "D": 1.393389,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T12:47:00-04:00",
+      "H": 0.626437,
+      "D": 1.373563,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T12:48:00-04:00",
+      "H": 0.618695,
+      "D": 1.381305,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T12:49:00-04:00",
+      "H": 0.639375,
+      "D": 1.360625,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T12:50:00-04:00",
+      "H": 0.610629,
+      "D": 1.389371,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T12:51:00-04:00",
+      "H": 0.631649,
+      "D": 1.368351,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T12:52:00-04:00",
+      "H": 0.588379,
+      "D": 1.411621,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T12:53:00-04:00",
+      "H": 0.612187,
+      "D": 1.387813,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T12:54:00-04:00",
+      "H": 0.622362,
+      "D": 1.377638,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T12:55:00-04:00",
+      "H": 0.61166,
+      "D": 1.38834,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T12:56:00-04:00",
+      "H": 0.514135,
+      "D": 1.485865,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T12:57:00-04:00",
+      "H": 0.517221,
+      "D": 1.482779,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T12:58:00-04:00",
+      "H": 0.513022,
+      "D": 1.486978,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T12:59:00-04:00",
+      "H": 0.535257,
+      "D": 1.464743,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T13:00:00-04:00",
+      "H": 0.520045,
+      "D": 1.479955,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T13:01:00-04:00",
+      "H": 0.509145,
+      "D": 1.490855,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T13:02:00-04:00",
+      "H": 0.485137,
+      "D": 1.514863,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T13:03:00-04:00",
+      "H": 0.542203,
+      "D": 1.457797,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T13:04:00-04:00",
+      "H": 0.515875,
+      "D": 1.484125,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T13:05:00-04:00",
+      "H": 0.491165,
+      "D": 1.508835,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T13:06:00-04:00",
+      "H": 0.509504,
+      "D": 1.490496,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T13:07:00-04:00",
+      "H": 0.550157,
+      "D": 1.449843,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T13:08:00-04:00",
+      "H": 0.477417,
+      "D": 1.522583,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T13:09:00-04:00",
+      "H": 0.48185,
+      "D": 1.51815,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T13:10:00-04:00",
+      "H": 0.455974,
+      "D": 1.544026,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T13:11:00-04:00",
+      "H": 0.445684,
+      "D": 1.554316,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T13:12:00-04:00",
+      "H": 0.42653,
+      "D": 1.57347,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T13:13:00-04:00",
+      "H": 0.442355,
+      "D": 1.557645,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T13:14:00-04:00",
+      "H": 0.456465,
+      "D": 1.543535,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T13:15:00-04:00",
+      "H": 0.489847,
+      "D": 1.510153,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T13:16:00-04:00",
+      "H": 0.427701,
+      "D": 1.572299,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T13:17:00-04:00",
+      "H": 0.42036,
+      "D": 1.57964,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T13:18:00-04:00",
+      "H": 0.431101,
+      "D": 1.568899,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T13:19:00-04:00",
+      "H": 0.470674,
+      "D": 1.529326,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T13:20:00-04:00",
+      "H": 0.410631,
+      "D": 1.589369,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T13:21:00-04:00",
+      "H": 0.404306,
+      "D": 1.595694,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T13:22:00-04:00",
+      "H": 0.436611,
+      "D": 1.563389,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T13:23:00-04:00",
+      "H": 0.442164,
+      "D": 1.557836,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T13:24:00-04:00",
+      "H": 0.449273,
+      "D": 1.550727,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T13:25:00-04:00",
+      "H": 0.445038,
+      "D": 1.554962,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T13:26:00-04:00",
+      "H": 0.424239,
+      "D": 1.575761,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T13:27:00-04:00",
+      "H": 0.466514,
+      "D": 1.533486,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T13:28:00-04:00",
+      "H": 0.436206,
+      "D": 1.563794,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T13:29:00-04:00",
+      "H": 0.447966,
+      "D": 1.552034,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T13:30:00-04:00",
+      "H": 0.448695,
+      "D": 1.551305,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T13:31:00-04:00",
+      "H": 0.463697,
+      "D": 1.536303,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T13:32:00-04:00",
+      "H": 0.44393,
+      "D": 1.55607,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T13:33:00-04:00",
+      "H": 0.45866,
+      "D": 1.54134,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T13:34:00-04:00",
+      "H": 0.476605,
+      "D": 1.523395,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T13:35:00-04:00",
+      "H": 0.491747,
+      "D": 1.508253,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T13:36:00-04:00",
+      "H": 0.444824,
+      "D": 1.555176,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T13:37:00-04:00",
+      "H": 0.484613,
+      "D": 1.515387,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T13:38:00-04:00",
+      "H": 0.468749,
+      "D": 1.531251,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T13:39:00-04:00",
+      "H": 0.533686,
+      "D": 1.466314,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T13:40:00-04:00",
+      "H": 0.494087,
+      "D": 1.505913,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T13:41:00-04:00",
+      "H": 0.470556,
+      "D": 1.529444,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T13:42:00-04:00",
+      "H": 0.487736,
+      "D": 1.512264,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T13:43:00-04:00",
+      "H": 0.51539,
+      "D": 1.48461,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T13:44:00-04:00",
+      "H": 0.491372,
+      "D": 1.508628,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T13:45:00-04:00",
+      "H": 0.493071,
+      "D": 1.506929,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T13:46:00-04:00",
+      "H": 0.475939,
+      "D": 1.524061,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T13:47:00-04:00",
+      "H": 0.489243,
+      "D": 1.510757,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T13:48:00-04:00",
+      "H": 0.434001,
+      "D": 1.565999,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T13:49:00-04:00",
+      "H": 0.467441,
+      "D": 1.532559,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T13:50:00-04:00",
+      "H": 0.455005,
+      "D": 1.544995,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T13:51:00-04:00",
+      "H": 0.450614,
+      "D": 1.549386,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T13:52:00-04:00",
+      "H": 0.423582,
+      "D": 1.576418,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T13:53:00-04:00",
+      "H": 0.433822,
+      "D": 1.566178,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T13:54:00-04:00",
+      "H": 0.459094,
+      "D": 1.540906,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T13:55:00-04:00",
+      "H": 0.471317,
+      "D": 1.528683,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T13:56:00-04:00",
+      "H": 0.43962,
+      "D": 1.56038,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T13:57:00-04:00",
+      "H": 0.471442,
+      "D": 1.528558,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T13:58:00-04:00",
+      "H": 0.462288,
+      "D": 1.537712,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T13:59:00-04:00",
+      "H": 0.485061,
+      "D": 1.514939,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T14:00:00-04:00",
+      "H": 0.350462,
+      "D": 1.649538,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T14:01:00-04:00",
+      "H": 0.360241,
+      "D": 1.639759,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T14:02:00-04:00",
+      "H": 0.38409,
+      "D": 1.61591,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T14:03:00-04:00",
+      "H": 0.47685,
+      "D": 1.52315,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T14:04:00-04:00",
+      "H": 0.504036,
+      "D": 1.495964,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T14:05:00-04:00",
+      "H": 0.528465,
+      "D": 1.471535,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T14:06:00-04:00",
+      "H": 0.463017,
+      "D": 1.536983,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T14:07:00-04:00",
+      "H": 0.483445,
+      "D": 1.516555,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T14:08:00-04:00",
+      "H": 0.471651,
+      "D": 1.528349,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T14:09:00-04:00",
+      "H": 0.526048,
+      "D": 1.473952,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T14:10:00-04:00",
+      "H": 0.491478,
+      "D": 1.508522,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T14:11:00-04:00",
+      "H": 0.528191,
+      "D": 1.471809,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T14:12:00-04:00",
+      "H": 0.540066,
+      "D": 1.459934,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T14:13:00-04:00",
+      "H": 0.513143,
+      "D": 1.486857,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T14:14:00-04:00",
+      "H": 0.518874,
+      "D": 1.481126,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T14:15:00-04:00",
+      "H": 0.515108,
+      "D": 1.484892,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T14:16:00-04:00",
+      "H": 0.546527,
+      "D": 1.453473,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T14:17:00-04:00",
+      "H": 0.494268,
+      "D": 1.505732,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T14:18:00-04:00",
+      "H": 0.493018,
+      "D": 1.506982,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T14:19:00-04:00",
+      "H": 0.576307,
+      "D": 1.423693,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T14:20:00-04:00",
+      "H": 0.559073,
+      "D": 1.440927,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T14:21:00-04:00",
+      "H": 0.541113,
+      "D": 1.458887,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T14:22:00-04:00",
+      "H": 0.527379,
+      "D": 1.472621,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T14:23:00-04:00",
+      "H": 0.539505,
+      "D": 1.460495,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T14:24:00-04:00",
+      "H": 0.606342,
+      "D": 1.393658,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T14:25:00-04:00",
+      "H": 0.54128,
+      "D": 1.45872,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T14:26:00-04:00",
+      "H": 0.530445,
+      "D": 1.469555,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T14:27:00-04:00",
+      "H": 0.534184,
+      "D": 1.465816,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T14:28:00-04:00",
+      "H": 0.577149,
+      "D": 1.422851,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T14:29:00-04:00",
+      "H": 0.556023,
+      "D": 1.443977,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T14:30:00-04:00",
+      "H": 0.489848,
+      "D": 1.510152,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T14:31:00-04:00",
+      "H": 0.507305,
+      "D": 1.492695,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T14:32:00-04:00",
+      "H": 0.516893,
+      "D": 1.483107,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T14:33:00-04:00",
+      "H": 0.504464,
+      "D": 1.495536,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T14:34:00-04:00",
+      "H": 0.571711,
+      "D": 1.428289,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T14:35:00-04:00",
+      "H": 0.543523,
+      "D": 1.456477,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T14:36:00-04:00",
+      "H": 0.548245,
+      "D": 1.451755,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T14:37:00-04:00",
+      "H": 0.499324,
+      "D": 1.500676,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T14:38:00-04:00",
+      "H": 0.516441,
+      "D": 1.483559,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T14:39:00-04:00",
+      "H": 0.565862,
+      "D": 1.434138,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T14:40:00-04:00",
+      "H": 0.587323,
+      "D": 1.412677,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T14:41:00-04:00",
+      "H": 0.525446,
+      "D": 1.474554,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T14:42:00-04:00",
+      "H": 0.541557,
+      "D": 1.458443,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T14:43:00-04:00",
+      "H": 0.571775,
+      "D": 1.428225,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T14:44:00-04:00",
+      "H": 0.639146,
+      "D": 1.360854,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T14:45:00-04:00",
+      "H": 0.540218,
+      "D": 1.459782,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T14:46:00-04:00",
+      "H": 0.540646,
+      "D": 1.459354,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T14:47:00-04:00",
+      "H": 0.545643,
+      "D": 1.454357,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T14:48:00-04:00",
+      "H": 0.564424,
+      "D": 1.435576,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T14:49:00-04:00",
+      "H": 0.554005,
+      "D": 1.445995,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T14:50:00-04:00",
+      "H": 0.542972,
+      "D": 1.457028,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T14:51:00-04:00",
+      "H": 0.534396,
+      "D": 1.465604,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T14:52:00-04:00",
+      "H": 0.57939,
+      "D": 1.42061,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T14:53:00-04:00",
+      "H": 0.559896,
+      "D": 1.440104,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T14:54:00-04:00",
+      "H": 0.592904,
+      "D": 1.407096,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T14:55:00-04:00",
+      "H": 0.553817,
+      "D": 1.446183,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T14:56:00-04:00",
+      "H": 0.579874,
+      "D": 1.420126,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T14:57:00-04:00",
+      "H": 0.550367,
+      "D": 1.449633,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T14:58:00-04:00",
+      "H": 0.586244,
+      "D": 1.413756,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T14:59:00-04:00",
+      "H": 0.614024,
+      "D": 1.385976,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T15:00:00-04:00",
+      "H": 0.59676,
+      "D": 1.40324,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T15:01:00-04:00",
+      "H": 0.562457,
+      "D": 1.437543,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T15:02:00-04:00",
+      "H": 0.589535,
+      "D": 1.410465,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T15:03:00-04:00",
+      "H": 0.58457,
+      "D": 1.41543,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T15:04:00-04:00",
+      "H": 0.620232,
+      "D": 1.379768,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T15:05:00-04:00",
+      "H": 0.545673,
+      "D": 1.454327,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T15:06:00-04:00",
+      "H": 0.548678,
+      "D": 1.451322,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T15:07:00-04:00",
+      "H": 0.559195,
+      "D": 1.440805,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T15:08:00-04:00",
+      "H": 0.59309,
+      "D": 1.40691,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T15:09:00-04:00",
+      "H": 0.590889,
+      "D": 1.409111,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T15:10:00-04:00",
+      "H": 0.570317,
+      "D": 1.429683,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T15:11:00-04:00",
+      "H": 0.545058,
+      "D": 1.454942,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T15:12:00-04:00",
+      "H": 0.54007,
+      "D": 1.45993,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T15:13:00-04:00",
+      "H": 0.515835,
+      "D": 1.484165,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T15:14:00-04:00",
+      "H": 0.595589,
+      "D": 1.404411,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T15:15:00-04:00",
+      "H": 0.547596,
+      "D": 1.452404,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T15:16:00-04:00",
+      "H": 0.547692,
+      "D": 1.452308,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T15:17:00-04:00",
+      "H": 0.523435,
+      "D": 1.476565,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T15:18:00-04:00",
+      "H": 0.545763,
+      "D": 1.454237,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T15:19:00-04:00",
+      "H": 0.555335,
+      "D": 1.444665,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T15:20:00-04:00",
+      "H": 0.565585,
+      "D": 1.434415,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T15:21:00-04:00",
+      "H": 0.534581,
+      "D": 1.465419,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T15:22:00-04:00",
+      "H": 0.564905,
+      "D": 1.435095,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T15:23:00-04:00",
+      "H": 0.553516,
+      "D": 1.446484,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T15:24:00-04:00",
+      "H": 0.617429,
+      "D": 1.382571,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T15:25:00-04:00",
+      "H": 0.548795,
+      "D": 1.451205,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T15:26:00-04:00",
+      "H": 0.556595,
+      "D": 1.443405,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T15:27:00-04:00",
+      "H": 0.562905,
+      "D": 1.437095,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T15:28:00-04:00",
+      "H": 0.57526,
+      "D": 1.42474,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T15:29:00-04:00",
+      "H": 0.592497,
+      "D": 1.407503,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T15:30:00-04:00",
+      "H": 0.577446,
+      "D": 1.422554,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T15:31:00-04:00",
+      "H": 0.54002,
+      "D": 1.45998,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T15:32:00-04:00",
+      "H": 0.570569,
+      "D": 1.429431,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T15:33:00-04:00",
+      "H": 0.54009,
+      "D": 1.45991,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T15:34:00-04:00",
+      "H": 0.588118,
+      "D": 1.411882,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T15:35:00-04:00",
+      "H": 0.559626,
+      "D": 1.440374,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T15:36:00-04:00",
+      "H": 0.570456,
+      "D": 1.429544,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T15:37:00-04:00",
+      "H": 0.545958,
+      "D": 1.454042,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T15:38:00-04:00",
+      "H": 0.546317,
+      "D": 1.453683,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T15:39:00-04:00",
+      "H": 0.568222,
+      "D": 1.431778,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T15:40:00-04:00",
+      "H": 0.571323,
+      "D": 1.428677,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T15:41:00-04:00",
+      "H": 0.557338,
+      "D": 1.442662,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T15:42:00-04:00",
+      "H": 0.568787,
+      "D": 1.431213,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T15:43:00-04:00",
+      "H": 0.545941,
+      "D": 1.454059,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T15:44:00-04:00",
+      "H": 0.588565,
+      "D": 1.411435,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T15:45:00-04:00",
+      "H": 0.5482,
+      "D": 1.4518,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T15:46:00-04:00",
+      "H": 0.544725,
+      "D": 1.455275,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T15:47:00-04:00",
+      "H": 0.557175,
+      "D": 1.442825,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T15:48:00-04:00",
+      "H": 0.569308,
+      "D": 1.430692,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T15:49:00-04:00",
+      "H": 0.562934,
+      "D": 1.437066,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T15:50:00-04:00",
+      "H": 0.527518,
+      "D": 1.472482,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T15:51:00-04:00",
+      "H": 0.520514,
+      "D": 1.479486,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T15:52:00-04:00",
+      "H": 0.544579,
+      "D": 1.455421,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T15:53:00-04:00",
+      "H": 0.517404,
+      "D": 1.482596,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T15:54:00-04:00",
+      "H": 0.544012,
+      "D": 1.455988,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T15:55:00-04:00",
+      "H": 0.476512,
+      "D": 1.523488,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T15:56:00-04:00",
+      "H": 0.501473,
+      "D": 1.498527,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T15:57:00-04:00",
+      "H": 0.478482,
+      "D": 1.521518,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T15:58:00-04:00",
+      "H": 0.473456,
+      "D": 1.526544,
+      "status": "computed"
+    },
+    {
+      "symbol": "NVDA",
+      "bar_ts": "2026-06-17T15:59:00-04:00",
+      "H": 0.487651,
+      "D": 1.512349,
+      "status": "computed"
+    }
+  ]
+}

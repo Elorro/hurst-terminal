@@ -21,3 +21,7 @@ outputs/
 .vscode/
 .idea/
 .DS_Store
+
+# Assets de portafolio: versionados a propósito (excepción a las reglas de arriba)
+!portfolio-assets/
+!portfolio-assets/**
