@@ -487,6 +487,9 @@ verifications, kept in the author's primary working language.*
   Indicio con n=2 de reacción más intensa con SEP (17-jun **con** SEP: mín
   H=0.350; 29-jul **sin** SEP: mín H=0.433). **No promediar con/sin SEP sin
   separar.**
+  - Fuente del mínimo de jun, **verificada desde datos persistidos**
+    (2026-09-08): `outputs/hurst_replay_2026-06-17_102904.csv` da **mín global
+    H = 0.350462 exactamente a las 14:00:00 ET**. Deja de ser cifra sin fuente.
 - **FOMC vs NFP/CPI = series separadas.** El FOMC sale **en sesión** (14:00 ET) y
   es testeable por la hipótesis primaria. NFP/CPI salen **pre-market (8:30 ET)**:
   invisibles al pipeline salvo por la apertura ya digerida (§9) — el anuncio ni

@@ -17,6 +17,13 @@ Hurst) are closed and verified; current work is accumulating evidence across
 macro events under a labelling protocol fixed in advance. There is no UI, no
 backtester, and no order routing — none are planned.
 
+The Hurst pipeline currently runs on a **single symbol, NVDA** (1-min bars,
+120-bar window). AMD was scoped out after verification at two timeframes: the
+free IEX feed lacks the coverage resolution for it, and the root cause is the
+feed, not the parameters — see `docs/BITACORA.md` §10. The data layer is
+symbol-agnostic and still streams both; admitting a symbol into the Hurst engine
+requires a per-symbol check against fixed dates.
+
 Two design commitments worth stating up front:
 
 - **Verification is not calibration.** Parameters are fixed before a replay runs;
