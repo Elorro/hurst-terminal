@@ -86,7 +86,7 @@ them as the same thing. All figures below are from `docs/BITACORA.md`.
     upstream-DNS drop early in the session cost 3 irrecoverable minutes of market
     data, delaying the first reading from 11:30 to 11:35 and yielding 265 H
     instead of 270 — a bounded delay, not a contaminated session.
-- **FOMC, 16 September 2026 (live)**: global minimum of H = 0.358 at 11:42 AM ET, 138 minutes before the release; did not meet the primary hypothesis. Logbook entry pending.
+- **FOMC, 16 September 2026 (live)**: global minimum of H = 0.358 at 11:42 AM ET, 138 minutes before the release; did not meet the primary hypothesis. Logged in docs/BITACORA.md §13.
 - **Regime signature so far**: across the three FOMC sessions (June replay, July live, September live), the session minimum of H fell inside the announcement window in two (June and July) and not in the third: on 16 September the minimum was H = 0.358 at 11:42 AM ET, 138 minutes before the 2:00 PM release. Only the September session was captured after the protocol was registered, and it did not meet the hypothesis. Between June and July, two of three phases coincide (an anti-persistent pre-announcement stretch and the session minimum at the 2:00 PM ET release); the third diverged outright: 80 of 106 minutes above H > 0.6 after the July release, against 5 of 106 in June. **n = 3 is an anecdote, not a pattern**; systematic validation continues under the protocol.
 - **Stack**: Python 3.14, `alpaca-py`, `numpy`, `pandas`. Data: Alpaca free-tier
   IEX feed.

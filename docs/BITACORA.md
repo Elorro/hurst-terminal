@@ -505,3 +505,13 @@ verifications, kept in the author's primary working language.*
 ### Próxima captura formal
 - **FOMC 16-sep (con dot plot), anuncio 14:00 ET.** Primera bajo este protocolo y
   primera con SEP bajo **persistencia completa** (H/D y latencia a CSV, §11).
+
+## 13. Captura Live FOMC 2026-09-16 (NVDA, live)
+
+Entrada escrita a posteriori el 2026-11-15 a partir de outputs/hurst_live_2026-09-16_093739.csv (ignorado por git); la sesión se capturó el 2026-09-16.
+- Archivo: `outputs/hurst_live_2026-09-16_093739.csv`.
+- Filas: 383; filas sin H: 120.
+- Mínimo global de H: 0.357896 a las 11:42 ET.
+- Diferencia respecto a las 14:00 ET: −138 minutos.
+- El criterio del protocolo no se cumplió.
+- Archivo previo: `outputs/hurst_live_2026-09-16_093646.csv`, solo contiene la cabecera.
